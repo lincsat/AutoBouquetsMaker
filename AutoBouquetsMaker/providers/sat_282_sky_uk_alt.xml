@@ -217,7 +217,8 @@ except:
 		1253: 293, # TG4
 		1257: 296, # Oireachtas TV
 		2804: 295, # RTE News Now
-		1019: 578, # "CNN HD"
+		1019: 578, # "CNN HD",
+		1830: 470, # "Ginx"
 	}
 	rename = {
 		# ITV regions
@@ -283,7 +284,8 @@ except:
 		3623: "BT SportEurHD",
 		5662: "BT Sport 1 HD",
 		5663: "BT Sport 2 HD",
-		2079: "BBC One HD"
+		2079: "BBC One HD",
+		1830: "Ginx"
 	}
 	
 	BBC_RB = {
