@@ -1,0 +1,170 @@
+<custommix>
+	<hacks>
+<![CDATA[
+
+# Make ITV regions bouquet
+
+ITVs = []
+ITVsPlusOne = []
+rest = []
+last_section = max(sections.keys())
+last_section_name = sections[last_section]
+
+for service in sorted(services["sat_282_sky_uk_alt1"]["video"].keys()):
+	if service in range(last_section, 1450) or service in [103, 133, 178]:
+		# ITV regions
+		if 'interactive_name' in services["sat_282_sky_uk_alt1"]["video"][service] and (service in [103,178] or (service in range(last_section, 1450) and '+1' not in services["sat_282_sky_uk_alt1"]["video"][service]["interactive_name"] and ('ITV' in services["sat_282_sky_uk_alt1"]["video"][service]["interactive_name"] or 'STV' in services["sat_282_sky_uk_alt1"]["video"][service]["interactive_name"] or 'UTV' in services["sat_282_sky_uk_alt1"]["video"][service]["interactive_name"]))):
+			ITVs.append(services["sat_282_sky_uk_alt1"]["video"][service])
+			
+		# ITV +1 regions
+		elif 'interactive_name' in services["sat_282_sky_uk_alt1"]["video"][service] and (service in [133] or (service in range(last_section, 1450) and '+1' in services["sat_282_sky_uk_alt1"]["video"][service]["interactive_name"] and ('ITV' in services["sat_282_sky_uk_alt1"]["video"][service]["interactive_name"] or 'STV' in services["sat_282_sky_uk_alt1"]["video"][service]["interactive_name"] or 'UTV' in services["sat_282_sky_uk_alt1"]["video"][service]["interactive_name"]))):
+			ITVsPlusOne.append(services["sat_282_sky_uk_alt1"]["video"][service])
+		
+		else:
+			rest.append(services["sat_282_sky_uk_alt1"]["video"][service])
+
+i = last_section
+sections[i] = "ITV Regions"
+
+sort_list = []
+for x in ITVs:
+	sort_list.append((x, re.sub('^(?![a-z])', 'zzzzz', x['interactive_name'].lower())))
+sort_list = sorted(sort_list, key=lambda listItem: listItem[1])
+for service in sort_list:
+	customised["video"][i] = service[0]
+	i += 1
+			
+sort_list = []
+for x in ITVsPlusOne:
+	sort_list.append((x, re.sub('^(?![a-z])', 'zzzzz', x['interactive_name'].lower())))
+sort_list = sorted(sort_list, key=lambda listItem: listItem[1])
+for service in sort_list:
+	customised["video"][i] = service[0]
+	i += 1
+		
+sections[i] = last_section_name	
+sort_list = []
+for x in rest:
+	sort_list.append((x, re.sub('^(?![a-z])', 'zzzzz', x['service_name'].lower())))
+sort_list = sorted(sort_list, key=lambda listItem: listItem[1])
+for service in sort_list:
+	customised["video"][i] = service[0]
+	i += 1
+	
+############################################################################################
+
+# make a timeshift bouquet
+
+timeshift = []
+rest = []
+last_section = max(sections.keys())
+last_section_name = sections[last_section]
+
+for service in sorted(services["sat_282_sky_uk_alt1"]["video"].keys()):
+	if service in range(last_section, 1450):
+		rest.append(services["sat_282_sky_uk_alt1"]["video"][service])
+	elif service < 1000 and ("+1" in services["sat_282_sky_uk_alt1"]["video"][service]["service_name"] or "+2" in services["sat_282_sky_uk_alt1"]["video"][service]["service_name"]):
+		timeshift.append(services["sat_282_sky_uk_alt1"]["video"][service])
+		
+i = last_section
+sections[i] = "Timeshifted Channels"
+
+sort_list = []
+for x in timeshift:
+	sort_list.append((x, re.sub('^(?![a-z])', 'zzzzz', x['service_name'].lower())))
+sort_list = sorted(sort_list, key=lambda listItem: listItem[1])
+for service in sort_list:
+	customised["video"][i] = service[0]
+	i += 1
+
+sections[i] = last_section_name	
+sort_list = []
+for x in rest:
+	sort_list.append((x, re.sub('^(?![a-z])', 'zzzzz', x['service_name'].lower())))
+sort_list = sorted(sort_list, key=lambda listItem: listItem[1])
+for service in sort_list:
+	customised["video"][i] = service[0]
+	i += 1
+			
+]]>
+
+	</hacks>
+	<inserts>
+		<!-- Removed HD channels that dont clear on sat and not available on cable -->
+		<insert provider="sat_282_sky_uk_alt1" source="222" target="108"></insert> <!-- Sky Atlantic HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="204" target="113"></insert> <!-- Universal HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="239" target="151"></insert> <!-- E! HD -->
+	 <!-- 	<insert provider="sat_282_sky_uk_alt1" source="236" target="156"></insert>Lifetime HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="456" target="455"></insert> <!-- LFCTV HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="422" target="421"></insert> <!-- Chelsea Tv HD -->
+		<!-- <insert provider="sat_282_sky_uk_alt1" source="1030" target="422"></insert> Chelsea Tv HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="413" target="427"></insert><!-- BT Sport 1 HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="417" target="457"></insert><!-- BT Sport 2 HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="414" target="433"></insert><!-- BT Sport Eu HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="544" target="528"></insert> <!-- Nat Geo Wild HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="545" target="529"></insert> <!-- History HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="555" target="553"></insert> <!-- CI HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="622" target="607"></insert> <!-- Disney XD HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="631" target="609"></insert> <!-- Disney Channel HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="628" target="611"></insert> <!-- Disney Jnr HD -->
+		<insert provider="sat_282_sky_uk_alt1" source="839" target="784"></insert> <!-- Star Plus HD -->
+		
+		<!-- replace sky hd channels with working ones from cable -->
+		<insert provider="cable_uk_virgin" source="100" target="100"></insert> <!-- VM Preview -->
+		<!-- <insert provider="cable_uk_virgin" source="150" target="105"></insert>  channel5 hd -->
+		<insert provider="cable_uk_virgin" source="109" target="106"></insert> <!-- sky one hd -->
+		<insert provider="cable_uk_virgin" source="111" target="107"></insert> <!-- sky living hd -->
+		<insert provider="cable_uk_virgin" source="145" target="136"></insert> <!-- e4 hd -->
+		<insert provider="cable_uk_virgin" source="165" target="114"></insert> <!-- syfy hd -->
+		<insert provider="cable_uk_virgin" source="168" target="125"></insert> <!-- tlc hd -->
+		<insert provider="cable_uk_virgin" source="179" target="179"></insert> <!-- itvbe hd -->
+		<insert provider="cable_uk_virgin" source="181" target="112"></insert> <!-- comedy central hd -->
+		<insert provider="cable_uk_virgin" source="183" target="126"></insert> <!-- mtv hd -->
+		<insert provider="cable_uk_virgin" source="191" target="109"></insert> <!-- watch hd -->
+		<insert provider="cable_uk_virgin" source="194" target="111"></insert> <!-- dave hd -->
+		<insert provider="cable_uk_virgin" source="199" target="124"></insert> <!-- fox hd -->
+		<insert provider="cable_uk_virgin" source="200" target="132"></insert> <!-- alibi hd -->
+		<insert provider="cable_uk_virgin" source="203" target="138"></insert> <!-- more 4 hd -->
+		<insert provider="cable_uk_virgin" source="209" target="156"></insert> <!-- Lifetime HD -->
+		<insert provider="cable_uk_virgin" source="249" target="532"></insert> <!-- Eden hd -->
+		<insert provider="cable_uk_virgin" source="251" target="520"></insert> <!-- discovery hd -->
+		<insert provider="cable_uk_virgin" source="257" target="523"></insert> <!-- animal planet hd -->
+		<insert provider="cable_uk_virgin" source="268" target="526"></insert> <!-- nat geo hd -->
+		<insert provider="cable_uk_virgin" source="265" target="528"></insert> <!-- nat geo wild hd -->
+		<insert provider="cable_uk_virgin" source="274" target="531"></insert> <!-- H2 hd -->
+		<insert provider="cable_uk_virgin" source="280" target="133"></insert> <!-- good food hd -->
+		<insert provider="cable_uk_virgin" source="206" target="121"></insert> <!-- sky arts 1 hd -->
+		<insert provider="cable_uk_virgin" source="311" target="358"></insert> <!-- mtv live hd -->
+		<insert provider="cable_uk_virgin" source="416" target="317"></insert> <!-- tcm hd -->
+		<insert provider="cable_uk_virgin" source="429" target="315"></insert> <!-- film4 hd -->
+		<insert provider="cable_uk_virgin" source="431" target="301"></insert> <!-- sky premiere hd -->
+		<insert provider="cable_uk_virgin" source="433" target="303"></insert> <!-- sky showcase hd -->
+		<insert provider="cable_uk_virgin" source="434" target="304"></insert> <!-- sky greats hd -->
+		<insert provider="cable_uk_virgin" source="435" target="305"></insert> <!-- sky disney hd -->
+		<insert provider="cable_uk_virgin" source="436" target="306"></insert> <!-- sky family hd -->
+		<insert provider="cable_uk_virgin" source="437" target="307"></insert> <!-- sky action hd -->
+		<insert provider="cable_uk_virgin" source="438" target="308"></insert> <!-- sky comedy hd -->
+		<insert provider="cable_uk_virgin" source="439" target="309"></insert> <!-- sky thriller hd -->
+		<insert provider="cable_uk_virgin" source="440" target="310"></insert> <!-- sky drama hd -->
+		<insert provider="cable_uk_virgin" source="441" target="311"></insert> <!-- sky scifi hd -->
+		<insert provider="cable_uk_virgin" source="442" target="312"></insert> <!-- sky select hd -->
+		<insert provider="cable_uk_virgin" source="501" target="401"></insert> <!-- sky sports news hq hd -->
+		<insert provider="cable_uk_virgin" source="502" target="402"></insert> <!-- sky sports 1 hd -->
+		<insert provider="cable_uk_virgin" source="503" target="403"></insert> <!-- sky sports 2 hd -->
+		<insert provider="cable_uk_virgin" source="504" target="404"></insert> <!-- sky sports 3 hd -->
+		<insert provider="cable_uk_virgin" source="505" target="405"></insert> <!-- sky sports 4 hd -->
+		<insert provider="cable_uk_virgin" source="506" target="406"></insert> <!-- sky sports 5 hd -->
+		<insert provider="cable_uk_virgin" source="507" target="407"></insert> <!-- sky sports f1 hd -->
+		<insert provider="cable_uk_virgin" source="521" target="410"></insert> <!-- british eurosport hd -->
+		<insert provider="cable_uk_virgin" source="522" target="411"></insert> <!-- british eurosport 2 hd -->
+	  <insert provider="cable_uk_virgin" source="527" target="413"></insert> <!-- BT Sport 1 HD -->
+		<insert provider="cable_uk_virgin" source="528" target="417"></insert> <!-- BT Sport 2 HD -->
+		<insert provider="cable_uk_virgin" source="529" target="414"></insert> <!-- BT Sport Europe HD -->
+		<insert provider="cable_uk_virgin" source="530" target="422"></insert> <!-- ESPN hd/ Chelsea SD -->
+		<insert provider="cable_uk_virgin" source="603" target="501"></insert> <!-- sky news hd -->
+		<insert provider="cable_uk_virgin" source="714" target="604"></insert> <!-- nickelodeon hd -->
+		<insert provider="cable_uk_virgin" source="732" target="601"></insert> <!-- cn hd -->
+		<insert provider="cable_uk_virgin" source="499" target="429"></insert> <!-- LFCTV HD -->
+		<insert provider="cable_uk_virgin" source="1001" target="492"></insert> <!-- Live Events HD -->
+	</inserts>
+</custommix>
