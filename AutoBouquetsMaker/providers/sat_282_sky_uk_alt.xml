@@ -1,0 +1,422 @@
+<provider>
+	<name>28E</name>
+	<streamtype>dvbs</streamtype>
+	<protocol>sky</protocol>
+	<transponder
+		orbital_position="282"
+		frequency="11778000"
+		symbol_rate="27500000"
+		polarization="1"
+		fec_inner="0"
+		inversion="2"
+		system="0"
+		modulation="1"
+		roll_off="0"
+		pilot="2"
+	/>
+	<!-- <transponder
+		orbital_position="282"
+		frequency="11141000"
+		symbol_rate="22000000"
+		polarization="0"
+		fec_inner="4"
+		inversion="2"
+		system="0"
+		modulation="2"
+		roll_off="0"
+		pilot="2" 
+	/> -->
+	<dvbsconfigs>
+		<configuration key="sdcustom_atherstone" bouquet="0x1001" region="0x13" namespace="0x11a0000">Atherstone Custom</configuration>
+		<configuration key="sdcustom_border_england" bouquet="0x1001" region="0x0c" namespace="0x11a0000">Border England Custom</configuration>
+		<configuration key="sdcustom_border_scotland" bouquet="0x1002" region="0x24" namespace="0x11a0000">Border Scotland Custom</configuration>
+		<configuration key="sdcustom_brighton" bouquet="0x1003" region="0x41" namespace="0x11a0000">Brighton Custom</configuration>
+		<configuration key="sdcustom_central_midlands" bouquet="0x1001" region="0x03" namespace="0x11a0000">Central Midlands Custom</configuration>
+		<configuration key="sdcustom_channel_isles" bouquet="0x1004" region="0x22" namespace="0x11a0000">Channel Isles Custom</configuration>
+		<configuration key="sdcustom_east_midlands" bouquet="0x1001" region="0x14" namespace="0x11a0000">East Midlands Custom</configuration>
+		<configuration key="sdcustom_essex" bouquet="0x1001" region="0x02" namespace="0x11a0000">Essex Custom</configuration>
+		<configuration key="sdcustom_gloucester" bouquet="0x1001" region="0x18" namespace="0x11a0000">Gloucester Custom</configuration>
+		<configuration key="sdcustom_granada" bouquet="0x1001" region="0x07" namespace="0x11a0000">Granada Custom</configuration>
+		<configuration key="sdcustom_henley_on_thames" bouquet="0x1003" region="0x46" namespace="0x11a0000">Henley On Thames Custom</configuration>
+		<configuration key="sdcustom_humber" bouquet="0x1001" region="0x1d" namespace="0x11a0000">Humber Custom</configuration>
+		<configuration key="sdcustom_london" bouquet="0x1001" region="0x01" namespace="0x11a0000">London Custom</configuration>
+		<configuration key="sdcustom_london_essex" bouquet="0x1001" region="0x12" namespace="0x11a0000">London / Essex Custom</configuration>
+		<configuration key="sdcustom_london_kent" bouquet="0x1003" region="0x40" namespace="0x11a0000">London Kent Custom</configuration>
+		<configuration key="sdcustom_london_thames_valley" bouquet="0x1003" region="0x42" namespace="0x11a0000">London / Thames Valley Custom</configuration>
+		<configuration key="sdcustom_meridian_east" bouquet="0x1001" region="0x0b" namespace="0x11a0000">Meridian East Custom</configuration>
+		<configuration key="sdcustom_meridian_north" bouquet="0x1003" region="0x44" namespace="0x11a0000">Meridian North Custom</configuration>
+		<configuration key="sdcustom_meridian_south" bouquet="0x1001" region="0x05" namespace="0x11a0000">Meridian South Custom</configuration>
+		<configuration key="sdcustom_merseyside" bouquet="0x1003" region="0x2d" namespace="0x11a0000">Merseyside Custom</configuration>
+		<configuration key="sdcustom_norfolk" bouquet="0x1001" region="0x15" namespace="0x11a0000">Norfolk/Suffolk Custom</configuration>
+		<configuration key="sdcustom_north_east_midlands" bouquet="0x1003" region="0x3e" namespace="0x11a0000">North East Midlands Custom</configuration>
+		<configuration key="sdcustom_north_west_yorkshire" bouquet="0x1001" region="0x08" namespace="0x11a0000">North West Yorkshire Custom</configuration>
+		<configuration key="sdcustom_north_yorkshire" bouquet="0x1001" region="0x1a" namespace="0x11a0000">North Yorkshire Custom</configuration>
+		<configuration key="sdcustom_northern_ireland" bouquet="0x1004" region="0x21" namespace="0x11a0000">Northern Ireland Custom</configuration>
+		<configuration key="sdcustom_oxford" bouquet="0x1003" region="0x47" namespace="0x11a0000">Oxford Custom</configuration>
+		<configuration key="sdcustom_scarborough" bouquet="0x1003" region="0x3d" namespace="0x11a0000">Scarborough Custom</configuration>
+		<configuration key="sdcustom_scotland_dundee" bouquet="0x1002" region="0x27" namespace="0x11a0000">Scotland North (Dundee) Custom</configuration>
+		<configuration key="sdcustom_scotland_grampian" bouquet="0x1002" region="0x23" namespace="0x11a0000">Scotland North (Grampian) Custom</configuration>
+		<configuration key="sdcustom_scottish_east" bouquet="0x1002" region="0x26" namespace="0x11a0000">Scotland East (Edinburgh) Custom</configuration>
+		<configuration key="sdcustom_scottish_west" bouquet="0x1002" region="0x25" namespace="0x11a0000">Scotland West (Glasgow) Custom</configuration>
+		<configuration key="sdcustom_south_lakeland" bouquet="0x1001" region="0x1c" namespace="0x11a0000">South Lakeland Custom</configuration>
+		<configuration key="sdcustom_south_yorkshire" bouquet="0x1003" region="0x48" namespace="0x11a0000">South Yorkshire Custom</configuration>
+		<configuration key="sdcustom_tees" bouquet="0x1003" region="0x45" namespace="0x11a0000">Tees Custom</configuration>
+		<configuration key="sdcustom_thames_valley" bouquet="0x1001" region="0x09" namespace="0x11a0000">Thames Valley Custom</configuration>
+		<configuration key="sdcustom_tring" bouquet="0x1001" region="0x1b" namespace="0x11a0000">Tring Custom</configuration>
+		<configuration key="sdcustom_tyne" bouquet="0x1001" region="0x0d" namespace="0x11a0000">Tyne Custom</configuration>
+		<configuration key="sdcustom_wales" bouquet="0x1004" region="0x20" namespace="0x11a0000">Wales Custom</configuration>
+		<configuration key="sdcustom_west_anglia" bouquet="0x1001" region="0x19" namespace="0x11a0000">West Anglia Custom</configuration> 
+		<configuration key="sdcustom_west_dorset" bouquet="0x1003" region="0x43" namespace="0x11a0000">West Dorset Custom</configuration>
+		<configuration key="sdcustom_westcountry" bouquet="0x1001" region="0x06" namespace="0x11a0000">Westcountry Custom</configuration>		
+		<configuration key="sdcustom_westcountry_east" bouquet="0x1001" region="0x04" namespace="0x11a0000">Westcountry East (Bristol) Custom</configuration>
+		<configuration key="sdcustom_west_thames_valley" bouquet="0x1003" region="0x3f" namespace="0x11a0000">West / Thames Valley Custom</configuration>
+	</dvbsconfigs>
+	<sections>
+		<section number="101">Entertainment</section>
+		<section number="286">Irish channels</section>
+		<section number="301">Movies</section>
+		<section number="350">Music</section>
+		<section number="401">Sports</section>
+		<section number="501">News</section>
+		<section number="520">Documentaries</section>
+		<section number="570">News Overflow</section>
+		<section number="580">Religious</section>
+		<section number="601">Kids</section>
+		<section number="650">Shopping</section>
+		<section number="700">Sky Box Office</section>
+		<section number="780">International</section>
+		<section number="861">Gaming and Dating</section>
+		<section number="881">Specialist</section>
+		<section number="900">Adult</section>
+		<section number="950">BBC Regions</section>
+		<section number="980">BBC Red Button</section>
+		<section number="988">Local TV</section>
+		<section number="998">Sky Info</section>
+		<section number="1000">Sky Sports Interactive</section>
+		<section number="1020">Sky Anytime</section>
+		<section number="1030">BT Sports Interactive</section>
+		<section number="1050">Not indexed</section>
+	</sections>
+	<!-- channelsontop affect only HD bouquets -->
+	<hdchannelsontop>
+		<channel number="115" /><!-- BBC 1 HD -->
+		<channel number="102" /><!-- BBC Two HD some regions -->
+		<channel number="141" /><!-- BBC Two HD -->
+		<channel number="178" /><!-- ITV HD -->
+		<channel number="227" /><!-- Channel 4 HD -->
+		<channel number="105" /><!-- Channel 5 HD -->
+		<channel number="106" /><!-- Sky 1 HD -->
+		<channel number="107" /><!-- Sky Living HD -->
+		<channel number="108" /><!-- Sky Atlantic HD -->
+		<channel number="109" /><!-- Watch HD -->
+		<channel number="111" /><!-- Dave HD -->
+		<channel number="112" /><!-- Comedy Central HD -->
+		<channel number="113" /><!-- Universal HD -->
+		<channel number="114" /><!-- Syfy HD -->
+		<channel number="143" /><!-- BBC Four HD -->
+	</hdchannelsontop>
+	<sdchannelsontop>
+		<channel number="115" /><!-- BBC 1 HD -->
+		<channel number="141" /><!-- BBC Two HD -->
+		<channel number="178" /><!-- ITV HD -->
+		<channel number="227" /><!-- Channel 4 HD -->
+		<channel number="171" /><!-- Channel 5 HD -->
+		<channel number="217" /><!-- Sky 1 HD -->
+		<channel number="221" /><!-- Sky Living HD -->
+		<channel number="222" /><!-- Sky Atlantic HD -->
+		<channel number="245" /><!-- Watch HD -->
+		<channel number="246" /><!-- Dave HD -->
+		<channel number="205" /><!-- Comedy Central HD -->
+		<channel number="204" /><!-- Universal HD -->
+		<channel number="201" /><!-- Syfy HD -->
+		<channel number="143" /><!-- BBC Four HD -->
+		<channel number="225" /><!-- ITV2 HD -->
+		<channel number="263" /><!-- ITV3 HD -->
+		<channel number="268" /><!-- ITV4 HD -->
+	</sdchannelsontop>
+	<!-- swapchannels affects main and sections bouquets. "number" is the SD channel. "with" is the HD channel. Swap will not occur if target is not HD -->
+	<swapchannels>
+	<!--	<channel number="101" with="115" /> BBC One HD -->
+		<channel number="102" with="141" /><!-- BBC Two HD -->
+	<!--	<channel number="103" with="178" /> ITV HD -->
+		<channel number="104" with="227" /><!-- Channel 4 HD -->
+		<channel number="105" with="171" /><!-- Channel 5 HD -->
+		<channel number="116" with="143" /><!-- BBC Four HD -->
+		<channel number="118" with="225" /><!-- ITV2 HD -->
+		<channel number="119" with="263" /><!-- ITV3 HD -->
+		<channel number="120" with="268" /><!-- ITV4 HD -->
+		<channel number="123" with="269" /><!-- ITV Encore HD -->
+		<channel number="162" with="224" /><!-- RTE2 HD -->
+		<channel number="192" with="276" /><!-- AMC from BT HD -->
+		<channel number="134" with="280" /><!-- S4C HD -->
+		<channel number="413" with="427" /><!-- BT Sport 1 HD -->
+		<channel number="414" with="433" /><!-- BT Sport EurHD -->
+		<channel number="417" with="457" /><!-- BT Sport 2 HD -->
+		<channel number="418" with="453" /><!-- MUTV HD -->
+		<channel number="424" with="460" /><!-- Setanta HD -->
+		<channel number="426" with="458" /><!-- BTSpt/ESPN HD -->
+		<channel number="428" with="462" /><!-- Premier HD -->
+		<channel number="432" with="466" /><!-- Racing UK HD -->
+		<channel number="437" with="490" /><!-- BoxNation HD -->
+		<channel number="501" with="516" /><!-- Sky News HD -->
+		<channel number="512" with="518" /><!-- RT HD -->
+		<channel number="503" with="570" /><!-- BBC News HD -->
+		<channel number="506" with="578" /><!-- CNN HD -->
+		<channel number="583" with="596" /><!-- Daystar HD -->
+		<channel number="613" with="633" /><!-- CBBC HD -->
+		<channel number="614" with="624" /><!-- CBeebies HD -->
+		<channel number="795" with="853" /><!-- &TV HD -->
+		<channel number="801" with="856" /><!-- TV Record HD -->
+	</swapchannels>
+	<servicehacks>
+<![CDATA[
+try:
+	is_assigned
+except:
+	is_assigned = True
+	custom = True if "custom" in bouquet_key else False
+	# slot some extra channels into vacant slots in the provider list if "custom" == True
+	########################################################################
+	#
+	# format: "channel name": number,
+	#
+	# example: "ITV2": 118,
+	#
+	########################################################################
+	channels_to_add = {
+    "London Live": 988,
+		"STV Glasgow": 989,
+		"STV Edinburgh": 990,
+		"Notts TV": 995,
+		"Made In Bristol": 991,
+		"Made In Leeds": 992,
+		"Made In Cardiff": 993,
+		"Made In Tn&Wr": 994,
+		"RTE One": 286,
+		"RTE One +1": 287,
+		"RTE2": 288,
+		"RTEjr": 290,
+		"TV3": 291,
+		"TV3+1": 292,
+		"TG4": 293,
+		"3e": 294,
+    "RTE News Now": 295,
+		"Oireachtas TV": 296,
+	#	"UTV HD": 298,
+		"UTV Ireland": 297,
+		"Setanta Ireland": 423,
+		"Setanta Sports1": 424,
+		"Setanta HD": 460
+	}
+	channels_to_add_by_id = {
+	  1251: 286, # RTE One
+	  1252: 288, # RTE2
+		2808: 287, # RTE 1 +1
+		1256: 290, # RTEjr
+		1270: 289, # RTE 2 HD
+		1253: 293, # TG4
+		1257: 296, # Oireachtas TV
+		2804: 295, # RTE News Now
+		1019: 578, # "CNN HD"
+	}
+	rename = {
+		# ITV regions
+		1020: "ITV Border Scotland",
+		1043: "ITV Tyne Tees HD",
+		1044: "ITV Yorkshire West HD",
+		1045: "ITV Anglia East HD",
+		3527: "STV Edinburgh",
+		4012: "UTV Ireland",
+		4055: "STV HD",
+		5070: "STV Glasgow",
+		6000: "ITV London",
+		6010: "ITV Central South",
+		6011: "ITV Central East",
+		6015: "ITV Central SW",
+		6030: "ITV West",
+		6040: "ITV West Country",
+		6089: "ITV Anglia East",
+		6130: "ITV Granada",
+		6140: "ITV Meridian South",
+		6142: "ITV Meridian East",
+		6143: "ITV Meridian North",
+		6160: "ITV Yorkshire West",
+		6161: "ITV Yorkshire East",
+		6200: "ITV Channel Isles",
+		6300: "ITV Central",
+		6381: "ITV Anglia West",
+		6390: "ITV Tyne Tees",
+		6110: "ITV Border",
+		6020: "ITV Wales",
+		6012: "ITV +1 Wales",
+		6065: "ITV +1 Yorkshire",
+		6125: "ITV +1 West Country",
+		6126: "ITV +1 Tyne Tees",
+		6127: "ITV +1 West",
+		6128: "ITV +1 Anglia",
+		6145: "ITV +1 Central",
+		6155: "ITV +1 London",
+		6210: "STV North (Grampian)",
+		6220: "STV Scottish West",
+		6325: "STV North (Dundee)",
+		6355: "ITV +1 Granada",
+		6365: "ITV +1 Meridian",
+		6371: "STV Scottish East",
+		6500: "ITV Yorkshire HD",
+		6501: "ITV Wales HD",
+		6502: "ITV Meridian South HD",
+		6503: "ITV Central West HD",
+		6504: "ITV London HD",
+		6505: "ITV Granada HD",
+		6510: "UTV HD",
+		# BT Interactive
+		5381: "BT Sport Mosaic Extra",
+		5382: "BT Sport Extra 2",
+		5383: "BT Sport Extra 3",
+		5384: "BT Sport Extra 4",
+		5385: "BT Sport Extra 5",
+		5386: "BT Sport Extra 6",
+		# Other channels
+		1019: "CNN HD",
+		5272: "Racing UK HD",
+		3622: "BT SportEurHD",
+		3623: "BT SportEurHD",
+		5662: "BT Sport 1 HD",
+		5663: "BT Sport 2 HD",
+		2079: "BBC One HD"
+	}
+	
+	BBC_RB = {
+		2051: ("BBC RB 1",0),
+		8602: ("BBC RB 2",1),
+		8603: ("BBC RB 3",2),
+		8604: ("BBC RB 4",3),
+		8605: ("BBC RB 5",4),
+		8606: ("BBC RB 6",5),
+		8611: ("BBC RB HD",6)
+	}
+	whitelist = ['ITV HD','ITV2 HD','ITV3 HD','ITV4 HD','ITV Encore HD',752,'BoxNation HD','BT Preview HD']
+	whitelist_by_id = [
+		1003, # MUTV HD
+		1019, # CNN HD
+		1047, # Insight HD
+		3141, # BT Sport/ESPN
+	#	3622, # 50682 BT SportEurHD
+	#	3623, # 50683 BT SportEurHD
+	#	3625, # BT Sport 1 HD
+	#	3627, # BT Sport 2 HD
+	#	3629, # BT SportEurHD
+		3661, # BT Sport 1
+		3663, # BT Sport 2
+	#	4040, # BT Sport/ESPNHD
+		4058, # Channel 5HD
+		5032, # BT Sport Europe
+	#	5037, # AMC from BTHD
+		5152, # Setanta HD
+		5153, # Premier HD
+		5154, # Setanta HD
+		5272, # Racing UK HD
+	#	5662, # 50662 BT Sport 1 HD
+	#	5663, # 50683 BT Sport 2 HD
+		2817,
+		4058
+	]
+	blacklist = []
+	bt_sports_id = [5030,5381,5031,5382,5383,5384,5385,5386]
+
+if service["transport_stream_id"] == 0x7e3:
+	service["namespace"] = 0x11a2f26
+
+# BBC HD channel numbers
+if service["channel_id"] in (2075,) and 115 in service["numbers"]: # BBC2 HD
+	service["numbers"][service["numbers"].index(115)] = 141
+	service["number"] = 141
+if service["channel_id"] in (2076,2081,2082,2083) and 141 in service["numbers"]: # BBC1 HD
+	service["numbers"][service["numbers"].index(141)] = 115
+	service["number"] = 115
+
+# sort out ITV channel names
+if "channel_id" in service and service["channel_id"] in rename:
+	service["interactive_name"] = rename[service["channel_id"]]
+
+# Add channels by name
+if custom and service["service_name"] in channels_to_add and service["service_type"] in DvbScanner.VIDEO_ALLOWED_TYPES and channels_to_add[service["service_name"]] not in LCNs_in_use:
+	LCNs_in_use.append(channels_to_add[service["service_name"]])
+	service["number"] = channels_to_add[service["service_name"]]
+	service["numbers"] = [channels_to_add[service["service_name"]]]
+
+# Add channels by ID
+if custom and service["channel_id"] in channels_to_add_by_id and service["service_type"] in DvbScanner.VIDEO_ALLOWED_TYPES and channels_to_add_by_id[service["channel_id"]] not in LCNs_in_use:
+	LCNs_in_use.append(channels_to_add_by_id[service["channel_id"]])
+	service["number"] = channels_to_add_by_id[service["channel_id"]]
+	service["numbers"] = [channels_to_add_by_id[service["channel_id"]]]
+	
+if service["service_type"] == 0x02 and service["number"] > 3000:
+	service["number"] -= 3000
+if service["service_type"] != 2 and (service["number"] in whitelist or service["service_name"] in whitelist or ("channel_id" in service and service["channel_id"] in whitelist_by_id)):
+	pass
+elif custom and service["service_type"] != 2 and (service["number"] in blacklist or service["service_name"] in blacklist):
+	skip = True
+elif custom and service["service_type"] >= 17 and service["service_type"] <= 25 and service["free_ca"] != 0:
+	skip = True
+	
+new_numbers = []
+for number in service["numbers"]:
+	if number >= 3000 and number <= 3999: # radio
+		new_numbers.append(number - 3000)
+	elif service["channel_id"] in BBC_RB:
+		LCNs_in_use.append(980 + BBC_RB[service["channel_id"]][1])
+		new_numbers.append(980 + BBC_RB[service["channel_id"]][1])
+		service["interactive_name"] = BBC_RB[service["channel_id"]][0]
+	elif number >= 1050 and number <= max(LCNs_in_use): # not indexed channels
+		new_numbers.append(number)
+	elif number > 999 or number < 101:
+		if service["channel_id"] > 1470 and service["channel_id"] < 1486: # Sky Sports Interactive
+			new_numbers.append(service["channel_id"] - 471)
+			service["interactive_name"] = "Sky Sports Interactive " + str(service["channel_id"])
+		#elif service["channel_id"] > 2050 and service["channel_id"] < 2060: #BBC Interactive
+			#if service["channel_id"] in [2056,2057,2058]:
+			#	LCNs_in_use.append(service["channel_id"] - 1072)
+			#	new_numbers.append(service["channel_id"] - 1072)
+			#	service["interactive_name"] = "BBC RB " + str(service["channel_id"] - 2052)
+			#else:
+ 		#	pass
+			#	free_slot_found = False
+			#	for i in range(987, 996):
+			#		if i in LCNs_in_use:
+			#			continue
+			#		else:
+			#			free_slot_found = True
+			#			LCNs_in_use.append(i)
+			#			new_numbers.append(i)
+			#			service["interactive_name"] = "BBC Interactive " + str(service["channel_id"])
+			#			break
+			#	if not free_slot_found:
+			#		skip = True
+		elif service["channel_id"] > 4093 and service["channel_id"] < 4099: # Sky Anytime
+			new_numbers.append(service["channel_id"] - 3074)
+			service["interactive_name"] = "Sky Anytime " + str(service["channel_id"])
+		elif service["channel_id"] in bt_sports_id:
+			new_numbers.append(1030 + bt_sports_id.index(service["channel_id"]))
+		else:
+			if extraservices:
+				i = 1450
+				while i > 1049 and i not in LCNs_in_use:
+					i -= 1
+				LCNs_in_use.append(i+1)
+				new_numbers.append(i+1)
+			else:
+				skip = True
+		break
+	elif service["service_name"] in ('Sky Intro') and number < 998: # Sky Intro
+		skip = True
+	else:
+		new_numbers.append(number)
+service["numbers"] = new_numbers
+#Some channels have the FTA flag when they should not.
+fta_corrections = ['BoxNation', 'MOTORS TV UK', 'MTV Live', 'Nick Jr+1', 'Sony Movies', 'Sony Movies+1','Sony TV', 'Sony TV +1', 'TLC+2']
+if service["service_name"] in fta_corrections:
+	service["free_ca"] = 1
+]]>
+	</servicehacks>
+</provider>
