@@ -180,7 +180,7 @@
   	<channel number="583" with="596" /><!-- Daystar HD -->		
 		<channel number="512" with="518" /><!-- RT HD -->
 		<channel number="503" with="570" /><!-- BBC News HD -->
-		<channel number="506" with="578" /><!-- CNN HD -->
+		<channel number="506" with="579" /><!-- CNN HD -->
 		<channel number="613" with="633" /><!-- CBBC HD -->
 		<channel number="614" with="624" /><!-- CBeebies HD -->
 		<channel number="795" with="853" /><!-- &TV HD -->
@@ -238,7 +238,7 @@ except:
 		1253: 293,
 		1257: 296,
 		2804: 295,
-		1019: 578, # "CNN HD",
+		1019: 579, # "CNN HD",
 	}
 
 	rename = {
