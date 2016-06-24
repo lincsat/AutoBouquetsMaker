@@ -217,8 +217,7 @@ except:
 		1253: 293, # TG4
 		1257: 296, # Oireachtas TV
 		2804: 295, # RTE News Now
-		1019: 578, # "CNN HD",
-		1830: 470, # "Ginx"
+		1019: 578, # "CNN HD"
 	}
 	rename = {
 		# ITV regions
