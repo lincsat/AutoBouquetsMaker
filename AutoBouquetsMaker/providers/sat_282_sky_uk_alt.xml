@@ -184,16 +184,7 @@ except:
 	#
 	########################################################################
 	channels_to_add = {
-    "London Live": 988,
-		"STV Glasgow": 989,
-		"STV Edinburgh": 990,
-		"Notts TV": 995,
-		"Made In Bristol": 991,
-		"Made In Leeds": 992,
-		"Made In Cardiff": 993,
-		"Made In Tn&Wr": 994,
 	#	"UTV HD": 298,
-		"UTV Ireland": 297
 	}
 
 	channels_to_add_by_id = {
@@ -219,6 +210,15 @@ except:
 		1257: 296, # Oireachtas TV
 		2804: 295, # RTE News Now
 		1256: 294, # RTEjr
+		5315: 991, # "Made In Bristol"
+		5537: 992, # "Made In Leeds"
+		5536: 993, # "Made In Cardiff"
+		5043: 994, # "Made In Tn&Wr"
+		5421: 995, # "Notts TV"
+		5090: 988, # "London Live"
+		5070: 989, # "STV Glasgow"
+		3527: 990, # "STV Edinburgh"
+		4012: 297, # "UTV Ireland"
 	}
 	rename = {
 		# ITV regions
