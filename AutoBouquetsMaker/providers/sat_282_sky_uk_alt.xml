@@ -192,32 +192,33 @@ except:
 		"Made In Leeds": 992,
 		"Made In Cardiff": 993,
 		"Made In Tn&Wr": 994,
-		"RTE One": 286,
-		"RTE One +1": 287,
-		"RTE2": 288,
-		"RTEjr": 290,
-		"TV3": 291,
-		"TV3+1": 292,
-		"TG4": 293,
-		"3e": 294,
-    "RTE News Now": 295,
-		"Oireachtas TV": 296,
 	#	"UTV HD": 298,
-		"UTV Ireland": 297,
-		"Setanta Ireland": 423,
-		"Setanta Sports1": 424,
-		"Setanta HD": 460
+		"UTV Ireland": 297
 	}
+
 	channels_to_add_by_id = {
-	  1251: 286, # RTE One
-	  1252: 288, # RTE2
-		2808: 287, # RTE 1 +1
-		1256: 290, # RTEjr
-		1270: 289, # RTE 2 HD
-		1253: 293, # TG4
+	  1251: 286,
+	  1252: 288,
+		2808: 287,
+		1256: 290,
+		1270: 289,
+		1253: 293,
+		1257: 296,
+		2804: 295,
+		1019: 579, # "CNN HD",
+		5122: 423, # eir Sport 1",
+		5123: 424, # eir Sport 2",
+		5154: 460, # eir Sport 2 HD",
+		1251: 286, # RTE One
+		2808: 287, # RTE One+1
+		1252: 288, # RTE2
+		1255: 290, # TV3
+		1025: 291, # TV3+1
+		1253: 292, # TG4
+		3615: 293, # 3e
 		1257: 296, # Oireachtas TV
 		2804: 295, # RTE News Now
-		1019: 579, # "CNN HD"
+		1256: 294, # RTEjr
 	}
 	rename = {
 		# ITV regions
