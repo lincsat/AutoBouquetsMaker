@@ -217,9 +217,11 @@ except:
 		1257: 296,
 		2804: 295,
 		1019: 579, # "CNN HD",
-		5122: 423, # eir Sport 1",
-		5123: 424, # eir Sport 2",
-		5154: 460, # eir Sport 2 HD",
+		5122: 423, # eir Sport 1 (also 3601)
+		5123: 424, # eir Sport 2 (also 4551)
+		5152: 460, # eir Sport 2 HD (also 5154)	
+ 		5311: 428, # Premier Sports
+ 		5153: 462, # Premier HD
 		1251: 286, # RTE One
 		2808: 287, # RTE One+1
 		1252: 288, # RTE2
@@ -307,35 +309,35 @@ except:
 		1830: "Ginx"
 	}
 	
-	BBC_RB = {
-		2051: ("BBC RB 1",1),
-		8602: ("BBC RB 2",2),
-		8603: ("BBC RB 3",3),
-		8604: ("BBC RB 4",4),
-		8605: ("BBC RB 5",5),
-		8606: ("BBC RB 6",6),
-		8611: ("BBC RB HD",0)
-	}
+#	BBC_RB = {
+#		2051: ("BBC RB 1",1),
+#		8602: ("BBC RB 2",2),
+#		8603: ("BBC RB 3",3),
+#		8604: ("BBC RB 4",4),
+#		8605: ("BBC RB 5",5),
+#		8606: ("BBC RB 6",6),
+#		8611: ("BBC RB HD",0)
+#	}
 	whitelist = ['ITV HD','ITV2 HD','ITV3 HD','ITV4 HD','ITV Encore HD',752,'BoxNation HD','BT Preview HD','Eurosport 1 HD']
 	whitelist_by_id = [
 		1003, # MUTV HD
 		1019, # CNN HD
 		1047, # Insight HD
-	#	3141, # BT Sport/ESPN
+		3141, # BT Sport/ESPN
 	#	3622, # 50682 BT SportEurHD
 	#	3623, # 50683 BT SportEurHD
 	#	3625, # BT Sport 1 HD
 	#	3627, # BT Sport 2 HD
 	#	3629, # BT SportEurHD
-	#	3661, # BT Sport 1
-	#	3663, # BT Sport 2
+		3661, # BT Sport 1
+		3663, # BT Sport 2
 	#	4040, # BT Sport/ESPNHD
 		4058, # Channel 5HD
-	#	5032, # BT Sport Europe
+		5032, # BT Sport Europe
 	#	5037, # AMC from BTHD
-		5152, # Setanta HD
+		5152, # eir Sport 2 HD
 		5153, # Premier HD
-		5154, # Setanta HD
+		5154, # eir Sport 2 HD
 		5272, # Racing UK HD
 	#	5662, # 50662 BT Sport 1 HD
 	#	5663, # 50683 BT Sport 2 HD
@@ -344,13 +346,19 @@ except:
 	]
 	blacklist = []
 	bt_sports_id = [5030,5381,5031,5382,5383,5384,5385,5386]
-
-if service["transport_stream_id"] == 0x7e3:
-	service["namespace"] = 0x11a2f26
-
-if "channel_id" in service and service["channel_id"] in rename: # sort out ITV channel names
-	service["interactive_name"] = rename[service["channel_id"]]
 	
+# BBC HD channel numbers
+if service["channel_id"] in (2075,) and 115 in service["numbers"]: # BBC2 HD
+	service["numbers"][service["numbers"].index(115)] = 141
+	service["number"] = 141
+if service["channel_id"] in (2076,2081,2082,2083) and 141 in service["numbers"]: # BBC1 HD
+	service["numbers"][service["numbers"].index(141)] = 115
+	service["number"] = 115
+
+# sort out ITV channel names
+if "channel_id" in service and service["channel_id"] in rename:
+	service["interactive_name"] = rename[service["channel_id"]]
+
 # Add channels by name
 if custom and service["service_name"] in channels_to_add and service["service_type"] in DvbScanner.VIDEO_ALLOWED_TYPES and channels_to_add[service["service_name"]] not in LCNs_in_use:
 	LCNs_in_use.append(channels_to_add[service["service_name"]])
@@ -362,50 +370,24 @@ if custom and service["channel_id"] in channels_to_add_by_id and service["servic
 	LCNs_in_use.append(channels_to_add_by_id[service["channel_id"]])
 	service["number"] = channels_to_add_by_id[service["channel_id"]]
 	service["numbers"] = [channels_to_add_by_id[service["channel_id"]]]
-
 if service["service_type"] == 0x02 and service["number"] > 3000:
 	service["number"] -= 3000
-
 if service["service_type"] != 2 and (service["number"] in whitelist or service["service_name"] in whitelist or ("channel_id" in service and service["channel_id"] in whitelist_by_id)):
 	pass
 elif custom and service["service_type"] != 2 and (service["number"] in blacklist or service["service_name"] in blacklist):
 	skip = True
 elif custom and service["service_type"] >= 17 and service["service_type"] <= 25 and service["free_ca"] != 0:
 	skip = True
-
 new_numbers = []
 for number in service["numbers"]:
 	if number >= 3000 and number <= 3999: # radio
 		new_numbers.append(number - 3000)
-	elif service["channel_id"] in BBC_RB:
-		LCNs_in_use.append(980 + BBC_RB[service["channel_id"]][1])
-		new_numbers.append(980 + BBC_RB[service["channel_id"]][1])
-		service["interactive_name"] = BBC_RB[service["channel_id"]][0]
 	elif number >= 1050 and number <= max(LCNs_in_use): # not indexed channels
 		new_numbers.append(number)
 	elif number > 999 or number < 101:
 		if service["channel_id"] > 1470 and service["channel_id"] < 1486: # Sky Sports Interactive
 			new_numbers.append(service["channel_id"] - 471)
 			service["interactive_name"] = "Sky Sports Interactive " + str(service["channel_id"])
-		#elif service["channel_id"] > 2050 and service["channel_id"] < 2060: #BBC Interactive
-			#if service["channel_id"] in [2056,2057,2058]:
-			#	LCNs_in_use.append(service["channel_id"] - 1072)
-			#	new_numbers.append(service["channel_id"] - 1072)
-			#	service["interactive_name"] = "BBC RB " + str(service["channel_id"] - 2052)
-			#else:
- 		#	pass
-			#	free_slot_found = False
-			#	for i in range(987, 996):
-			#		if i in LCNs_in_use:
-			#			continue
-			#		else:
-			#			free_slot_found = True
-			#			LCNs_in_use.append(i)
-			#			new_numbers.append(i)
-			#			service["interactive_name"] = "BBC Interactive " + str(service["channel_id"])
-			#			break
-			#	if not free_slot_found:
-			#		skip = True
 		elif service["channel_id"] > 4093 and service["channel_id"] < 4099: # Sky Anytime
 			new_numbers.append(service["channel_id"] - 3074)
 			service["interactive_name"] = "Sky Anytime " + str(service["channel_id"])
